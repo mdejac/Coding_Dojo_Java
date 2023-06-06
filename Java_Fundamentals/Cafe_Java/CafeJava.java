@@ -20,9 +20,9 @@ public class CafeJava {
         boolean isReadyOrder3 = false;
         boolean isReadyOrder4 = true;
 
-        System.out.println(generalGreeting + customer1 + (isReadyOrder1 ? readyMessage + displayTotalMessage + String.format("%.2f",dripCoffee) + ".\n" : pendingMessage));
-        System.out.println(generalGreeting + customer4 + (isReadyOrder4 ? readyMessage + displayTotalMessage + String.format("%.2f",cappucino) + ".\n" : pendingMessage));
-        System.out.println(generalGreeting + customer2 + (isReadyOrder2 ? readyMessage + displayTotalMessage + String.format("%.2f",(latte*2)) + ".\n" : pendingMessage));
-        System.out.println(generalGreeting + customer3 + ". " + displayTotalMessage + String.format("%.2f",(latte - dripCoffee)) + ".\n");
+        System.out.println(generalGreeting + customer1 + (isReadyOrder1 ? readyMessage + displayTotalMessage + String.format("%.2f", dripCoffee) + ".\n" : pendingMessage));
+        System.out.println(generalGreeting + customer4 + (isReadyOrder4 ? readyMessage + displayTotalMessage + String.format("%.2f", cappucino) + ".\n" : pendingMessage));
+        System.out.println(generalGreeting + customer2 + (isReadyOrder2 ? readyMessage + displayTotalMessage + String.format("%.2f", (latte*2)) + ".\n" : pendingMessage));
+        System.out.println(generalGreeting + customer3 + ". " + displayTotalMessage + String.format("%.2f", (latte - dripCoffee)) + ".\n");
     }
 }
