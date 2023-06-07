@@ -15,7 +15,7 @@ public class AlfredQuotes {
     public String guestGreeting() {
         SimpleDateFormat militaryDateFormatter = new SimpleDateFormat("k");
         int hour = Integer.parseInt(militaryDateFormatter.format(date));
-        String dayPeriod = hour > 4 && hour < 12 ? "morning" : hour > 12 && hour < 18 ? "afternoon" : "night";
+        String dayPeriod = hour >= 4 && hour < 12 ? "morning" : hour >= 12 && hour < 18 ? "afternoon" : "night";
         
         return String.format("Good %s. Lovely to see you.", dayPeriod);
     }
