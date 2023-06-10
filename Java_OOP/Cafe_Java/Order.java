@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
 public class Order {
-    String name;
-    double total;
-    boolean isReady;
-    ArrayList<Item> items;
+    public String name;
+    public double total;
+    public boolean isReady;
+    public ArrayList<Item> items;
 
     public Order(String name){
         this.name = name;
