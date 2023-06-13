@@ -21,7 +21,7 @@ public class TestBankAccount {
         System.out.printf("Account1 checking balance : $%.2f\n", account1.getCheckingTotal());
         System.out.printf("Account1 savings balance : $%.2f\n\n", account1.getSavingsTotal());
 
-        account2.deposit("CHECKING", 0);
+        account2.deposit("CHECKING", 0).deposit("savings", 50).displayBalances().withdrawl("savings", 50).displayBalances();
 
         BankAccount account5 = new BankAccount();
         System.out.println("Account total should show 5 : " + BankAccount.getTotalAccounts());

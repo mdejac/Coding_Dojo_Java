@@ -20,20 +20,20 @@ public class BankAccount {
         totalAccountsBalance += (savingsTotal + checkingTotal);
     }
 
-    public static int getTotalAccounts() {
-        return totalAccounts;
-    }
-
-    public static double getTotalAccountsBalance() {
-        return totalAccountsBalance;
-    }
-
     private String accountNumberGenerator() {
         String accountNumber = "";
         for (int i = 0; i < 10; i++){
             accountNumber += Integer.toString((int)(Math.random()*9)+1);
         }
         return accountNumber;
+    }
+
+    public static int getTotalAccounts() {
+        return totalAccounts;
+    }
+
+    public static double getTotalAccountsBalance() {
+        return totalAccountsBalance;
     }
     
     public String getAccountNumber() {
@@ -60,6 +60,7 @@ public class BankAccount {
                 break;
             case "savings" :
                 this.savingsTotal += amount;
+                break;
             default:
                 System.out.println("Invalid account type.");
                 isValidAccountType = false;
@@ -76,7 +77,7 @@ public class BankAccount {
         switch (accountType.toLowerCase()) {
             case "checking" :
                 if (this.checkingTotal >= amount){
-                    this.checkingTotal += amount;
+                    this.checkingTotal -= amount;
                     isValidAccountType = true;
                 } else {
                     System.out.println("Insufficent funds\n");
@@ -84,7 +85,7 @@ public class BankAccount {
                 break;
             case "savings" :
                 if (this.savingsTotal >= amount){
-                    this.savingsTotal += amount;
+                    this.savingsTotal -= amount;
                     isValidAccountType = true;
                 } else {
                     System.out.println("Insuffient funds\n");
