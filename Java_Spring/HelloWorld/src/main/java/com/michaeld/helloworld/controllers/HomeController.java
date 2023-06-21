@@ -1,18 +1,18 @@
-package com.michaeld.helloworld;
+package com.michaeld.helloworld.controllers;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ui.Model;
 
-@RestController
+@Controller
 @RequestMapping("/index")
 public class HomeController {
 	@RequestMapping("")
-	public String index() {
-		return "Hello World!!";
+	public String index(Model model) {
+		model.addAttribute("fruit1", "pineapple");
+		model.addAttribute("fruit2", "watermelon");
+		return "index.jsp";
 	}
 	
-	@RequestMapping("/message")
-	public String myMessage() {
-		return "This is my message!";
-	}
 }
+
