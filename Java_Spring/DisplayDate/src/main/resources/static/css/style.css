@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+h1 {
+	color: blue;
+	text-align: center;
+}
+
+#main {
+	display: flex;
+	justify-content: center;
+	gap: 10%;
+}

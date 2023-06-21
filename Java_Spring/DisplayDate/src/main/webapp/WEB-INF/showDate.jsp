@@ -5,18 +5,12 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
-	<script type="text/javascript" src="/js/app.js"></script>
+	<script type="text/javascript" src="/js/app.js" defer></script>
+	<title>Date</title>
 </head>
 <body>
-
-	<h2>Two plus two is : </h2>
-	<p><c:out value="${2+2}"/></p>
-	
-	<h2>Fruits of the day : </h2>
-	<p><c:out value="${fruit1}"/></p>
-	<p><c:out value="${fruit2}"/></p>
-	
+	<h1><c:out value="${date}"/></h1>
+	<div id="message-data" data-message="This is the Date template"></div>
 </body>
 </html>
