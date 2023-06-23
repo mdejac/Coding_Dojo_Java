@@ -14,7 +14,7 @@
 				0
 			</c:when>
 			<c:otherwise>
-				<c:out value="${visitCount + 1}"/>
+				<c:out value="${visitCount}"/>
 			</c:otherwise>
 		</c:choose>
 	 times.</p>
