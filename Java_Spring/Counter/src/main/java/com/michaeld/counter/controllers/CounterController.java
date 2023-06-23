@@ -13,9 +13,8 @@ public class CounterController {
 	public String index(HttpSession session) {
 		if (session.getAttribute("visitCount") == null) {
 			session.setAttribute("visitCount", 0);
-		} else {
-			session.setAttribute("visitCount", (Integer)session.getAttribute("visitCount")+1);
 		}
+		session.setAttribute("visitCount", (Integer)session.getAttribute("visitCount")+1);
 		
 		return "index.jsp";
 	}
