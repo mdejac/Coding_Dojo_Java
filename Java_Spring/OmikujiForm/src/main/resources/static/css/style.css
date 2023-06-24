@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+h1 {
+	text-align: center;
+	margin-bottom : 5%;
+}
+
+
+body {
+	padding-right: 20%;
+	padding-left: 20%;
+	padding-bottom:20%;
+	text-align: center;
+}
+
+
+#omikuji {
+	text-align: start;
+	background-color: skyblue;
+	border : 5px;
+	border-style: solid;
+	border-color: black;
+	padding: 5%;
+	margin-bottom: 5%;
+}
