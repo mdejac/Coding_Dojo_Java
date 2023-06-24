@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+body{
+    padding: 10px 15%;
+    background-color: lightslategray;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 0;
+}
+
+input {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: goldenrod;
+}
+
+#gameboard {
+    background-color: burlywood;
+    padding : 20px;
+}
+
+#selection_area {
+    gap: 5%;
+    text-align: center;
+}
+
+#activities {
+    padding: 5px 0;
+    height: 200px;
+    overflow: auto;
+    scroll-behavior: smooth;
+    scroll-padding-top: 200px;
+    background-color: whitesmoke;
+}
+
+.gold_display {
+    min-width: 40px;
+    margin-left: 10px;
+    text-align: end;
+    background-color: whitesmoke;
+}
+
+.choice_boxes {
+	margin-top: 5px;
+    padding-bottom: 20px;
+    flex: 1;
+    background-color: rgb(177, 162, 143)
+}
+
+.choice_boxes p {
+    font-size: smaller;
+    margin-top: 5px;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex_between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.border_black {
+    border: 1px solid black;
+}
+
+.button_shadow {
+    box-shadow: 1px 1px 5px black;
+}
+
+.green_text {
+    color: green;
+    font-size: small;
+}
+
+.red_text {
+    color: red;
+    font-size: small;
+}
