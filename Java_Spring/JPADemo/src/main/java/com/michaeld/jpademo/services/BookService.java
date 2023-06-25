@@ -1,5 +1,6 @@
 package com.michaeld.jpademo.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,9 +18,10 @@ public class BookService {
         this.bookRepository = bookRepository;
     }
     // returns all the books
-    public List<Book> allBooks() {
+    public ArrayList<Book> allBooks() {
         return bookRepository.findAll();
     }
+
     // creates a book
     public Book createBook(Book b) {
         return bookRepository.save(b);
