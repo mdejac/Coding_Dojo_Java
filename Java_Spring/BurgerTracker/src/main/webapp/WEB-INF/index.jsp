@@ -28,7 +28,7 @@
       		<tbody>
 				<c:forEach var="burger" items="${allBurgers}">
 					<tr>						
-						<td><a href="/books/${burger.id}"><c:out value="${burger.name}"/></a></td>
+						<td><a href="/burgers/${burger.id}"><c:out value="${burger.name}"/></a></td>
 						<td><c:out value="${burger.restaurantName}"/></td>
 						<td><c:out value="${burger.rating}"/></td>
 					</tr>

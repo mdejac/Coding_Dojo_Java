@@ -38,7 +38,10 @@
             	</div>
         	</div>
     	</div>
-    	<a href="/books">Home</a>
+    	<div class="mb-6">
+    		<a href="/books" class="btn btn-primary">Home</a>
+    		<a href="/books/edit/${book.id}" class="btn btn-warning">Edit Book</a>
+    	</div>
  	</div>
 </body>
 </html>

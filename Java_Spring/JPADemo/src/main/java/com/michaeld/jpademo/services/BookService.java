@@ -27,16 +27,13 @@ public class BookService {
         return bookRepository.save(b);
     }
     // updates a book
-    public Book updateBook(Long id, String title, String desc, String lang, Integer numOfPages) {
-    	Book tempBook = findBook(id);
-    	if (tempBook == null) {
-    		return null;
-    	}
-    	tempBook.setTitle(title);
-    	tempBook.setNumberOfPages(numOfPages);
-    	tempBook.setLanguage(lang);
-    	tempBook.setDescription(desc);
-        return bookRepository.save(tempBook);
+    public Book updateBook(Book b) {
+//    	Book tempBook = findBook(b.getId());
+//    	if (tempBook == null) {
+//    		return null;
+//    	}
+//    	tempBook = b;
+        return bookRepository.save(b);
     }
     // retrieves a book
     public Book findBook(Long id) {
