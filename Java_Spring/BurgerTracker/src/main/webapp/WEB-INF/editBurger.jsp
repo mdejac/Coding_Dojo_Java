@@ -13,33 +13,9 @@
 	<title>Burger Tracker</title>
 </head>
 <body>
-	<h1>Burger Tracker</h1>
-	
-	<div class="container">
-	    <h2 class="mb-3 mt-3">All Burgers</h2>
-    	<table class="table table-striped">
-      		<thead>
-        		<tr>
-					<th>Burger Name</th>
-					<th>Restaurant Name</th>
-					<th>Rating (out of 5)</th>
-					<th>Actions</th>
-   		     	</tr>
-      		</thead>
-      		<tbody>
-				<c:forEach var="burger" items="${allBurgers}">
-					<tr>						
-						<td><c:out value="${burger.name}"/></td>
-						<td><c:out value="${burger.restaurantName}"/></td>
-						<td><c:out value="${burger.rating}"/></td>
-						<td><a href="/burgers/${burger.id}">View</a> | <a href="/burgers/edit/${burger.id}">Edit</a> | <a href="/burgers/delete/${burger.id}">Delete</a></td>
-					</tr>
-				</c:forEach>
-      		</tbody>
-    	</table>
-	</div>
-	<h2>Add A Burger!</h2>
-	<form:form class="border border-dark p-5" action="/burgers/create/submit" method="post" modelAttribute="burger">
+<h2>Edit Burger : <c:out value="${burgerName}"/></h2>
+	<form:form class="border border-dark p-5" action="/burgers/edit/${burger.id}" method="post" modelAttribute="burger">
+		<input type="hidden" name="_method" value="put"/>
 		<div class="mb-3">
 			<form:label path="name" class="form-label" for="name">Burger Name : </form:label>
 			<form:errors path="name" class="text-danger"/>
@@ -65,8 +41,8 @@
 		</div>
 
 		<div class="mb-3">
-			<input class="btn btn-primary" type="submit" value="Add Burger" />
-			<a href="/burgers" class="btn btn-warning">Clear</a>
+			<input class="btn btn-primary" type="submit" value="Submit Edit" />
+			<a href="/burgers" class="btn btn-warning">Home</a>
 		</div>		
 	</form:form>
 </body>

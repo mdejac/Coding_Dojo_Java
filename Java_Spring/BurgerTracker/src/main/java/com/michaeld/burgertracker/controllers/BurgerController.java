@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.michaeld.burgertracker.models.Burger;
@@ -46,8 +47,32 @@ public class BurgerController {
 	public String showBurger(
 						@PathVariable("id") Long id,
 						Model model) {
+		model.addAttribute("burger", burgerService.findBurger(id));
+		return "showBurger.jsp";
+	}
+	
+	@GetMapping("/edit/{id}")
+	public String edit(@PathVariable("id") Long id, Model model) {
 		Burger burger = burgerService.findBurger(id);
 		model.addAttribute("burger", burger);
-		return "showBurger.jsp";
+		model.addAttribute("burgerName", burger.getName());
+		return "editBurger.jsp";
+	}
+	
+	@PutMapping("/edit/{id}")
+	public String editSubmit(@Valid @ModelAttribute("burger") Burger burger, BindingResult result, Model model) {
+		if (result.hasErrors()) {
+			model.addAttribute("burger", burger);
+			model.addAttribute("burgerName", burgerService.findBurger(burger.getId()).getName());
+			return "editBurger.jsp";
+		}
+		burgerService.update(burger);
+		return "redirect:/burgers";
+	}
+	
+	@GetMapping("/delete/{id}")
+	public String delete(@PathVariable("id") Long id) {
+		burgerService.delete(id);
+		return "redirect:/burgers";		
 	}
 }

@@ -28,11 +28,6 @@ public class BookService {
     }
     // updates a book
     public Book updateBook(Book b) {
-//    	Book tempBook = findBook(b.getId());
-//    	if (tempBook == null) {
-//    		return null;
-//    	}
-//    	tempBook = b;
         return bookRepository.save(b);
     }
     // retrieves a book

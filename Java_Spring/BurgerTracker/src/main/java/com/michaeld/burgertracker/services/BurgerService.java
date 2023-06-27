@@ -32,4 +32,12 @@ public class BurgerService {
 	public ArrayList<Burger> findByName(String search){
 		return burgerRepository.findByName(search);
 	}
+	
+	public Burger update(Burger burger) {
+		return burgerRepository.save(burger);
+	}
+	
+	public void delete(Long id) {
+		burgerRepository.deleteById(id);
+	}
 }

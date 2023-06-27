@@ -34,7 +34,11 @@
             	</div>
         	</div>
     	</div>
-    	<a href="/burgers">Home</a>
+    	<div class="mb-9">
+	    	<a href="/burgers/edit/${burger.id}" class="btn btn-primary">Edit Burger</a>
+	    	<a href="/burgers/delete/${burger.id}" class="btn btn-danger">Delete Burger</a>
+	    	<a href="/burgers" class="btn btn-warning">Cancel</a>
+    	</div>
  	</div>
 </body>
 </html>
