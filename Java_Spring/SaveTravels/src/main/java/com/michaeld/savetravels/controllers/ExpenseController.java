@@ -1,6 +1,6 @@
 package com.michaeld.savetravels.controllers;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,11 +24,11 @@ import jakarta.validation.Valid;
 public class ExpenseController {
 	
 	@Autowired
-	ExpenseService expenseService;
+	private ExpenseService expenseService;
 	
 	@GetMapping("")
 	public String index(Model model, @ModelAttribute("expense") Expense expense) {
-		ArrayList<Expense> allExpenses = expenseService.allExpenses();
+		List<Expense> allExpenses = expenseService.allExpenses();
 		Double totalSpent = 0.0;
 		for (Expense expenses : allExpenses) {
 			totalSpent += expenses.getAmount();

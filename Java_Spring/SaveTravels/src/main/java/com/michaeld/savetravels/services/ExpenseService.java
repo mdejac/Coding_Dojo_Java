@@ -1,6 +1,6 @@
 package com.michaeld.savetravels.services;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
@@ -20,7 +20,7 @@ public class ExpenseService {
 		return expenseRepository.save(expense);
 	}
 	
-	public ArrayList<Expense> allExpenses() {
+	public List<Expense> allExpenses() {
 		return expenseRepository.findAll();
 	}
 	
