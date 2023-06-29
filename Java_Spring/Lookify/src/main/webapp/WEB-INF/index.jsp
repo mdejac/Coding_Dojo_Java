@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
 	<title>Lookify</title>
 </head>
-<body>
+<body class="text-center">
 	<h1>Welcome to Lookify!</h1>
 	<a href="/songs/dashboard">Start Looking</a>
 </body>
