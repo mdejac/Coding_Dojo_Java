@@ -34,9 +34,11 @@ public class BurgerController {
 	}
 	
 	@PostMapping("/create/submit")
-	public String create(@Valid @ModelAttribute("burger") Burger burger, BindingResult result) {
+	public String create(@Valid @ModelAttribute("burger") Burger burger, BindingResult result, Model model) {
 		
 		if (result.hasErrors()) {
+			ArrayList<Burger> allBurgers = burgerService.allBurgers();
+			model.addAttribute("allBurgers", allBurgers);
 			return "index.jsp";
 		}
 		
