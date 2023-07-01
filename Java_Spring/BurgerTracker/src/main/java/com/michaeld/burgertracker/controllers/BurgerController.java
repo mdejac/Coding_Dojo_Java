@@ -47,9 +47,7 @@ public class BurgerController {
 	}
 	
 	@GetMapping("/{id}")
-	public String showBurger(
-						@PathVariable("id") Long id,
-						Model model) {
+	public String showBurger(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("burger", burgerService.findBurger(id));
 		return "showBurger.jsp";
 	}

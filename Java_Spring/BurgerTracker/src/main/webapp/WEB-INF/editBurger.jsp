@@ -14,8 +14,8 @@
 </head>
 <body>
 <h2>Edit Burger : <c:out value="${burgerName}"/></h2>
-	<form:form class="border border-dark p-5" action="/burgers/edit/${burger.id}" method="post" modelAttribute="burger">
-		<input type="hidden" name="_method" value="put"/>
+	<form:form class="border border-dark p-5" action="/burgers/edit/${burger.id}" method="put" modelAttribute="burger">
+<!-- 		<input type="hidden" name="_method" value="put"/> -->
 		<div class="mb-3">
 			<form:label path="name" class="form-label" for="name">Burger Name : </form:label>
 			<form:errors path="name" class="text-danger"/>
