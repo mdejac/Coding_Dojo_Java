@@ -20,7 +20,7 @@
 			<form:select path="location" class="form-select">
 				<form:option value ="" disabled="true" selected="true" hidden="true">Select a location...</form:option>
 	        	<c:forEach var="oneDojo" items="${allDojos}">
-	        	  	<form:option value="${oneDojo.id}" path="person">
+	        	  	<form:option value="${oneDojo.id}" path="location">
 		               	<c:out value="${oneDojo.name}"/>
 		         	</form:option>	        		
 	        	</c:forEach>

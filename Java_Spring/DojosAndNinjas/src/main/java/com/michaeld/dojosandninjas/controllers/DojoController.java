@@ -44,13 +44,6 @@ public class DojoController {
 		return "dojoView.jsp";
 	}
 	
-	@GetMapping("/edit/{id}")
-	public String dojoEdit(@PathVariable("id") Long id, Model model) {
-		model.addAttribute("dojo", dojoService.getById(id));
-		model.addAttribute("dojoName", (dojoService.getById(id)).getName());
-		return "dojoEdit.jsp";
-	}
-	
 	@PutMapping("/edit/{id}")
 	public String dojoEditSubmit(@Valid @ModelAttribute("dojo") Dojo dojo, BindingResult result, 
 								Model model, @PathVariable("id") Long id) {
