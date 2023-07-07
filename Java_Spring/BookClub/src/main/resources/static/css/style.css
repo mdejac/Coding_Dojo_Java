@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+body {
+	background-color: #f7f7f7;
+	font-family:'Ubuntu', sans-serif;
+}
+
+.header {
+	background-color: #e1b294;
+	border: 1px solid black;
+	padding: 2%;
+}
+
+.table, .card {
+	border: 1px solid black;
+}
+
+.table thead, .card-header{
+	background-color: #e1b294;
+}
