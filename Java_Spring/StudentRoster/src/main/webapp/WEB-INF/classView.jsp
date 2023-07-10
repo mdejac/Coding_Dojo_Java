@@ -11,25 +11,18 @@
 </head>
 <body class="p-5">
 <div class="container">
-	    <h2 class="mb-3 mt-3">Dorms</h2>
-	    <div>
-	    	<a href="/dorms/new" class="d-block">Add a new Dorm</a>
-	    	<a href="/students/new" class="d-block">Add a new Student</a>
-	    	<a href="/classes/new" class="d-block">Add a new Class</a>
-	    	<a href="/classes">View all classes</a>
-	    </div>
+	<h2>Students taking <c:out value="${oneClass.name}"/></h2>
+	<a href="/dorms">Home</a>
     	<table class="table table-striped table-bordered text-center mt-3">
       		<thead>
         		<tr>
 					<th>Name</th>
-					<th>Action</th>
    		     	</tr>
       		</thead>
       		<tbody class="align-middle">
-				<c:forEach var="dorm" items="${allDorms}">
+				<c:forEach var="student" items="${oneClass.students}">
 					<tr>						
-						<td><c:out value="${dorm.name}"/></td>
-						<td><a href="/dorms/view/${dorm.id}">See Students</a></td>
+						<td><a href="/students/${student.id}/view"><c:out value="${student.name}"/></a></td>
 					</tr>
 				</c:forEach>
       		</tbody>

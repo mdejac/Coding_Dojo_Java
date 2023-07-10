@@ -12,26 +12,21 @@
 	<title>Dorm Roster</title>
 </head>
 <body class="p-5">
-	<h2><c:out value="${dorm.name}"/> Students</h2>
+	<h2><c:out value="${student.name}"/>'s classes</h2>
 	<a href="/dorms">Home</a>
 	
-	<form action="/dorms/add/student/${dorm.id}" method="post">
+	<form action="/students/${student.id}/view" method="post">
 	<div class="d-flex">
 		<div class="mb-3 col-6 text-center border border-dark p-5">
 			<div class="form-floating">
-				<select id="student" name="studentId" class="form-select" required>
-					<c:forEach var="oneStudent" items="${allStudents}">
-						<c:if test="${oneStudent.dorm.id != dorm.id}">
-					    	<option value="${oneStudent.id}">
-								<c:out value="${oneStudent.name} "/>
-								<c:if test="${oneStudent.dorm != null }">
-									- (<c:out value="${oneStudent.dorm.name}"/>)
-								</c:if>
-						  	</option>	        		
-						</c:if>
+				<select id="class" name="classId" class="form-select" required>
+					<c:forEach var="oneClass" items="${allClasses}">
+					    <option value="${oneClass.id}">
+							<c:out value="${oneClass.name} "/>
+						 </option>	        		
 				    </c:forEach>
 				</select>
-				<label for="student">Student : </label>	
+				<label for="class">Class : </label>	
 			</div>
 		</div>
 		<div class="mb-3 col-6 text-center border border-dark p-5">
@@ -43,15 +38,15 @@
     <table class="table table-striped table-bordered">
       	<thead>
         	<tr>
-				<th>Student</th>
+				<th>Class name</th>
 				<th class="text-center">Action</th>
    		     </tr>
       	</thead>
       	<tbody>
-			<c:forEach var="student" items="${dorm.students}">
+			<c:forEach var="oneClass" items="${student.classes}">
 				<tr>						
-					<td><a href="/students/${student.id}/view"><c:out value="${student.name}"/></a></td>
-					<td class="text-center"><a href="/dorms/remove/student/${student.id}">Remove</a></td>
+					<td><a href="/classes/${oneClass.id}/view"><c:out value="${oneClass.name}"/></a></td>
+					<td class="text-center"><a href="/students/${student.id}/remove/${oneClass.id}">Drop</a></td>
 				</tr>
 			</c:forEach>
       	</tbody>
