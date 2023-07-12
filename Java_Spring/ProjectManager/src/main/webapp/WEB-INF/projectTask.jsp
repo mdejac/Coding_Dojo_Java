@@ -28,21 +28,24 @@
 						<h3 class="card-title"><c:out value="${project.title}"/></h3>
 						<p>Team Lead : <c:out value="${project.creator.firstName}"/> <c:out value="${project.creator.lastName}"/></p>
 					</div>
-					
-					<div class="card-body">
-						<form:form class="border border-dark rounded p-5" action="/projects/${project.id}/tasks" method="post" modelAttribute="task">
+					<c:forEach var="teamMember" items="${project.teamMembers}">
+  						<c:if test="${teamMember.id == userId}">
+							<div class="card-body">
+								<form:form class="border border-dark rounded p-5" action="/projects/${project.id}/tasks" method="post" modelAttribute="task">
+									
+									<div class="mb-3">
+										<form:label path="description" class="form-label">Add a task ticket for this team :</form:label>
+										<form:errors path="description" class="text-danger"/>
+										<form:textarea path="description" class="form-control" rows="10" required="true"></form:textarea>
+									</div>
 							
-							<div class="mb-3">
-								<form:label path="description" class="form-label">Add a task ticket for this team :</form:label>
-								<form:errors path="description" class="text-danger"/>
-								<form:textarea path="description" class="form-control" rows="10" required="true"></form:textarea>
+									<div class="mb-3 text-end">
+										<input class="btn btn-primary" type="submit" value="Submit" />
+									</div>		
+								</form:form>			
 							</div>
-					
-							<div class="mb-3 text-end">
-								<input class="btn btn-primary" type="submit" value="Submit" />
-							</div>		
-						</form:form>			
-					</div>
+					  </c:if>
+					</c:forEach>
 				</div>
 			</div>
 			<div class="col">
