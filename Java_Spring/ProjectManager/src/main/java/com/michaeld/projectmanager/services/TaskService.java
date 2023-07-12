@@ -29,4 +29,8 @@ public class TaskService {
 		t.setCreatedBy(userRepo.findById(userId).orElse(null));
 		return taskRepo.save(t);
 	}
+	
+	public void delete(Long id) {
+		taskRepo.deleteById(id);;
+	}
 }

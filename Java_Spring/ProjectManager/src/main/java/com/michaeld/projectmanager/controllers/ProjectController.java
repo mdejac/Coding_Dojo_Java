@@ -69,7 +69,11 @@ public class ProjectController {
 		if (session.getAttribute("userId") == null) {
 			return "redirect:/";
 		}
-		model.addAttribute("project", projectService.getById(id));
+		Project project = projectService.getById(id);
+		if (!project.getCreator().getId().equals((Long)session.getAttribute("userId"))) {
+			return "redirect:/dashboard";
+		}
+		model.addAttribute("project", project);
 		return "projectEdit.jsp";
 	}
 	
@@ -109,5 +113,11 @@ public class ProjectController {
 		}
 		taskService.create(task, projectId, (Long) session.getAttribute("userId"));
 		return "redirect:/projects/" + projectId + "/tasks";
+	}
+	
+	@GetMapping("/{projectId}/delete")
+	public String delete(@PathVariable("projectId") Long id) {
+		projectService.delete(id);
+		return "redirect:/dashboard";
 	}
 }

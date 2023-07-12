@@ -49,8 +49,9 @@
 							</div>
 					
 							<div class="mb-3 text-end">
-								<a class="btn btn-warning" href="/dashboard">Cancel</a>
 								<input class="btn btn-success" type="submit" value="Submit" />
+								<a class="btn btn-warning" href="/dashboard">Cancel</a>
+								<a class="btn btn-danger" href="/projects/${project.id}/delete">Delete</a>
 							</div>		
 						</form:form>			
 					</div>

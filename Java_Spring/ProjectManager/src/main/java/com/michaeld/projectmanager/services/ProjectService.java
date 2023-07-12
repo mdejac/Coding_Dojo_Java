@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.michaeld.projectmanager.models.Project;
+import com.michaeld.projectmanager.models.Task;
 import com.michaeld.projectmanager.models.User;
 import com.michaeld.projectmanager.repositories.ProjectRepo;
+import com.michaeld.projectmanager.repositories.TaskRepo;
 import com.michaeld.projectmanager.repositories.UserRepo;
 
 @Service
@@ -19,6 +21,9 @@ public class ProjectService {
 	
 	@Autowired
 	UserRepo userRepo;
+	
+	@Autowired
+	TaskRepo taskRepo;
 	
 	
 	public Project create(Project p) {
@@ -66,6 +71,15 @@ public class ProjectService {
 		Project project = projectRepo.findById(projectId).orElse(null);
 		project.getTeamMembers().remove(user);
 		projectRepo.save(project);
+	}
+	
+	public void delete(Long id) {
+		Project project = projectRepo.findById(id).orElse(null);
+		for (Task task:project.getTasks()) {
+			task.setProject(null);
+			taskRepo.deleteById(task.getId());
+		}
+		projectRepo.deleteById(id);
 	}
 	
 }
