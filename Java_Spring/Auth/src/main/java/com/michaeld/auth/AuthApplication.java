@@ -1,12 +1,13 @@
-package com.michaeld.projectmanager;
+package com.michaeld.auth;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ProjectManagerApplication {
+public class AuthApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProjectManagerApplication.class, args);
+		SpringApplication.run(AuthApplication.class, args);
 	}
+
 }

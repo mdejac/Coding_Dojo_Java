@@ -28,6 +28,7 @@ public class Task {
 	
 	@NotBlank(message="Desctiption can not be blank.")
 	@Size(min=3, message="Desctiption must be at least three characters.")
+	@Column(columnDefinition="TEXT")
 	private String description;
 	
 	@ManyToOne(fetch=FetchType.LAZY)

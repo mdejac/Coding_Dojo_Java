@@ -37,11 +37,13 @@ public class Project {
 	
 	@NotBlank(message="Desctiption can not be blank.")
 	@Size(min=3, message="Desctiption must be at least three characters.")
+	@Column(columnDefinition="TEXT")
 	private String description;
 	
 	@NotNull
 	@FutureOrPresent(message="Due date can not be in the past.")
 	@DateTimeFormat(pattern="yyyy-MM-dd")
+	@Column(columnDefinition="DATE")
 	private Date dueDate;
 	
 	@ManyToOne(fetch=FetchType.LAZY)

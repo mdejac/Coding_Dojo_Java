@@ -50,7 +50,7 @@ public class ProjectService {
 	}
 	
 	public Project update(Project p) {
-		Project oldProject = projectRepo.findById(p.getId()).orElse(null);
+		Project oldProject = getById(p.getId());
 		p.setCreator(oldProject.getCreator());
 		p.setTeamMembers(oldProject.getTeamMembers());
 		return projectRepo.save(p);

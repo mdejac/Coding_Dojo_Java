@@ -42,7 +42,7 @@ public class UserService {
 			result.rejectValue("dateOfBirth", "Fail", "Sorry you are too young to register.");
 		}
 		
-		if (!newUser.getPassword().matches("^(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&+=])(?=.*[a-z]).{8,}$")) {
+		if (!newUser.getPassword().matches("^(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&+=!])(?=.*[a-z]).{8,}$")) {
 			result.rejectValue("password", "Requirement", "Password must contain at least one capital letter, one digit, and one symbol");
 			result.rejectValue("confirmPassword", "Requirement", "Password must contain at least one capital letter, one digit, and one symbol");
 		}
